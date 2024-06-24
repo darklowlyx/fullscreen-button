@@ -1,0 +1,46 @@
+@import "nullstyle.css";
+
+:root{
+	--black: #101010;
+	--white: #f0f0f0;
+}
+
+* {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	
+}
+body {
+	background-color: var(--black);
+	min-height: 100dvh;
+}
+body::backdrop{
+	background-color: var(--black);
+}
+#fullscreen-button {
+	position: absolute;
+	top:  15px;
+	right:  15px;
+	background: var(--white);
+	border:  0;
+	width:  40px;
+	height:  40px;
+	border-radius: 50%;
+	box-sizing: border-box;
+	transition:  transform .3s;
+	cursor:  pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#fullscreen-button:hover {
+	transform: scale(1.125);
+}
+#fullscreen-button svg:nth-child(2) { 
+	display: none;
+}
+[fullscreen] #fullscreen-button svg:nth-child(1) {
+	display: none;
+}
+[fullscreen] #fullscreen-button svg:nth-child(2) {
+	display: inline-block;
+}
